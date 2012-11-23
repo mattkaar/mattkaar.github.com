@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[matt kaar]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2012-11-23T14:26:56-05:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://mattkaar.github.com/atom.xml" rel="self"/>
+  <link href="http://mattkaar.github.com/"/>
+  <updated>2012-11-23T14:40:23-05:00</updated>
+  <id>http://mattkaar.github.com/</id>
   <author>
     <name><![CDATA[Matt]]></name>
     
@@ -15,12 +15,12 @@
   
   <entry>
     <title type="html"><![CDATA[Craigslist searches delivered to your inbox]]></title>
-    <link href="http://yoursite.com/blog/2011/03/15/craigslist-searches-delivered-to-your-inbox/"/>
+    <link href="http://mattkaar.github.com/blog/2011/03/15/craigslist-searches-delivered-to-your-inbox/"/>
     <updated>2011-03-15T10:54:00-04:00</updated>
-    <id>http://yoursite.com/blog/2011/03/15/craigslist-searches-delivered-to-your-inbox</id>
+    <id>http://mattkaar.github.com/blog/2011/03/15/craigslist-searches-delivered-to-your-inbox</id>
     <content type="html"><![CDATA[<p>Nat and I are on the hunt for a leather ottoman. Some guy on Craigslist sold his after promising it to us, and its been hard to find another since.</p>
 
-<p><img src="http://yoursite.com/images/mk/craigslist_ottoman.png" width="448" height="355"></p>
+<p><img src="http://mattkaar.github.com/images/mk/craigslist_ottoman.png" width="448" height="355"></p>
 
 <p>With a search only returning six hits, what we really needed was Craigslist to notify us when new ottomans get posted. Craigslist won&#8217;t do this on its own, but with the help of <a href="http://feedmyinbox.com/">FeedMyInbox</a>, searching for our new ottoman became a whole lot easier.</p>
 
@@ -29,10 +29,10 @@
 <ol>
 <li><p>After searching for an item on Craigslist, <strong>copy the URL from the results page</strong>.</p>
 
-<p> <img src="http://yoursite.com/images/mk/craigslist_copy.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/craigslist_copy.png"></p></li>
 <li><p>Head over to <a href="http://feedmyinbox.com/">FeedMyInbox</a> and paste the URL where it says <strong>Website or Feed URL</strong>. Then <strong>add your email address</strong> and click <strong>Submit</strong>.</p>
 
-<p> <img src="http://yoursite.com/images/mk/feedmyinbox.png" width="544" height="344"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/feedmyinbox.png" width="544" height="344"></p></li>
 </ol>
 
 
@@ -44,9 +44,9 @@
   
   <entry>
     <title type="html"><![CDATA[Addendum: Amazon EC2 VPN with Windows]]></title>
-    <link href="http://yoursite.com/blog/2010/12/08/addendum-amazon-ec2-vpn-with-windows/"/>
+    <link href="http://mattkaar.github.com/blog/2010/12/08/addendum-amazon-ec2-vpn-with-windows/"/>
     <updated>2010-12-08T19:43:00-05:00</updated>
-    <id>http://yoursite.com/blog/2010/12/08/addendum-amazon-ec2-vpn-with-windows</id>
+    <id>http://mattkaar.github.com/blog/2010/12/08/addendum-amazon-ec2-vpn-with-windows</id>
     <content type="html"><![CDATA[<p><a href="http://twitter.com/mascasa">@Mascasa</a> recently wrote some excellent instructions on setting up OpenVPN using Amazon Web Services and getting connected with a Mac client:</p>
 
 <p><a href="http://www.stratumsecurity.com/blog/2010/12/03/shearing-firesheep-with-the-cloud/">www.stratumsecurity.com/blog/2010/12/03/shearing-firesheep-with-the-cloud/</a></p>
@@ -62,7 +62,7 @@
 </ol>
 
 
-<p><img src="http://yoursite.com/images/mk/openvpn_connect.png"></p>
+<p><img src="http://mattkaar.github.com/images/mk/openvpn_connect.png"></p>
 
 <p>That&#8217;s it. Visit <a href="http://ipchicken.com/">IPChicken</a> and check that your Amazon IP appears. And leave a comment if you run into problems.</p>
 ]]></content>
@@ -70,14 +70,14 @@
   
   <entry>
     <title type="html"><![CDATA[Hooked on Instapaper]]></title>
-    <link href="http://yoursite.com/blog/2010/08/29/hooked-on-instapaper/"/>
+    <link href="http://mattkaar.github.com/blog/2010/08/29/hooked-on-instapaper/"/>
     <updated>2010-08-29T00:49:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/08/29/hooked-on-instapaper</id>
-    <content type="html"><![CDATA[<p>If there&#8217;s one browsing tool I like more than <a href="http://yoursite.com/blog/2010/07/27/single-minded-browsing-using-safari-reader">Safari Reader</a>/<a href="http://yoursite.com/blog/2010/08/09/how-to-install-ireader-for-firefox">iReader</a>, it&#8217;s <a href="http://instapaper.com">Instapaper</a>. Reading articles during the day drives me to distraction, and Instapaper allows me to save off interesting stuff for later consumption.</p>
+    <id>http://mattkaar.github.com/blog/2010/08/29/hooked-on-instapaper</id>
+    <content type="html"><![CDATA[<p>If there&#8217;s one browsing tool I like more than <a href="http://mattkaar.github.com/blog/2010/07/27/single-minded-browsing-using-safari-reader">Safari Reader</a>/<a href="http://mattkaar.github.com/blog/2010/08/09/how-to-install-ireader-for-firefox">iReader</a>, it&#8217;s <a href="http://instapaper.com">Instapaper</a>. Reading articles during the day drives me to distraction, and Instapaper allows me to save off interesting stuff for later consumption.</p>
 
 <p>To get started, head over to <a href="http://instapaper.com">instapaper.com</a> and register for an account. I recommend setting a password too, but it&#8217;s not required. Then click and drag the <strong>Read Later</strong> button to the bookmarks bar in your browser (that&#8217;s Chrome for Mac below.)</p>
 
-<p><img src="http://yoursite.com/images/mk/instapaper.png" width="462" height="442"></p>
+<p><img src="http://mattkaar.github.com/images/mk/instapaper.png" width="462" height="442"></p>
 
 <p>And that&#8217;s it! When you stumble across a long web article, just click that Read Later bookmark. Once you have time to read, open up Instapaper and click the Text button next to each story — they&#8217;ll show up without any annoying ads.</p>
 
@@ -87,10 +87,10 @@
   
   <entry>
     <title type="html"><![CDATA[How to install iReader for Firefox]]></title>
-    <link href="http://yoursite.com/blog/2010/08/09/how-to-install-ireader-for-firefox/"/>
+    <link href="http://mattkaar.github.com/blog/2010/08/09/how-to-install-ireader-for-firefox/"/>
     <updated>2010-08-09T20:28:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/08/09/how-to-install-ireader-for-firefox</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/mk/ireader_icon.png" width="50" height="50"></p>
+    <id>http://mattkaar.github.com/blog/2010/08/09/how-to-install-ireader-for-firefox</id>
+    <content type="html"><![CDATA[<p><img src="http://mattkaar.github.com/images/mk/ireader_icon.png" width="50" height="50"></p>
 
 <p>Mom, the last time I posted about Safari Reader you asked me if it&#8217;s something you could use.</p>
 
@@ -103,22 +103,22 @@
 <ol>
 <li><p>Click here → <a href="https://addons.mozilla.org/en-US/firefox/addon/195787/">iReader :: Add-ons for Firefox</a>.  That will load a separate tab with this in it:</p>
 
-<p> <img src="http://yoursite.com/images/mk/ireader_1.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/ireader_1.png"></p></li>
 <li><p>Click <strong>Add to Firefox</strong>.</p>
 
-<p> <img src="http://yoursite.com/images/mk/ireader_2.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/ireader_2.png"></p></li>
 <li><p>A warning screen will appear.  You&#8217;ll have to trust me on this one.  Click <strong>Add to Firefox</strong> again.</p>
 
-<p> <img src="http://yoursite.com/images/mk/ireader_3.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/ireader_3.png"></p></li>
 <li><p>Firefox is really paranoid with warning you about software.  Read the text and click <strong>Install Now</strong>.</p>
 
-<p> <img src="http://yoursite.com/images/mk/ireader_4.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/ireader_4.png"></p></li>
 <li><p>In order to enable the add-on, you&#8217;ve got to restart Firefox.  Luckily, there&#8217;s a convenient <strong>Restart Firefox</strong> button in the next window that appears.  Click that button.</p>
 
-<p> <img src="http://yoursite.com/images/mk/ireader_5.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/ireader_5.png"></p></li>
 <li><p>Finally surf to any long web article like this one.  You should see <strong>a little &#8216;R&#8217; icon</strong> in the address bar.  Go ahead and click it.</p>
 
-<p> <img src="http://yoursite.com/images/mk/ireader_6.png"></p></li>
+<p> <img src="http://mattkaar.github.com/images/mk/ireader_6.png"></p></li>
 <li><p>Now enjoy easier reading and no ads.</p></li>
 </ol>
 
@@ -127,14 +127,14 @@
   
   <entry>
     <title type="html"><![CDATA[Single-minded browsing using Safari Reader]]></title>
-    <link href="http://yoursite.com/blog/2010/07/27/single-minded-browsing-using-safari-reader/"/>
+    <link href="http://mattkaar.github.com/blog/2010/07/27/single-minded-browsing-using-safari-reader/"/>
     <updated>2010-07-27T00:41:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/07/27/single-minded-browsing-using-safari-reader</id>
+    <id>http://mattkaar.github.com/blog/2010/07/27/single-minded-browsing-using-safari-reader</id>
     <content type="html"><![CDATA[<p>I&#8217;ll admit it — I forward my fair share of web articles to family and friends. Unfortunately, with small font sizes and distracting ads, my eyes tire out quickly after page 3 of most long articles.</p>
 
 <p>Enter the <a href="http://www.apple.com/safari/whats-new.html#reader">new Reader button in Safari 5</a>.</p>
 
-<p><img src="http://yoursite.com/images/mk/reader_button.png" width="283" height="53"></p>
+<p><img src="http://mattkaar.github.com/images/mk/reader_button.png" width="283" height="53"></p>
 
 <p>Reader displays an article&#8217;s text in a readable font size and greys out the rest of the clutter.  It&#8217;ll also consolidate multi-page articles to a single page.</p>
 
@@ -142,9 +142,9 @@
 
 <p>Check out how Reader handles <a href="http://www.nytimes.com/2010/07/27/health/27brod.html">this New York Times article on Vitamin D deficiency</a>.</p>
 
-<p><img src="http://yoursite.com/images/mk/nytimes_article.png" width="552" height="406"></p>
+<p><img src="http://mattkaar.github.com/images/mk/nytimes_article.png" width="552" height="406"></p>
 
-<p><img src="http://yoursite.com/images/mk/safari_reader.png" width="512" height="339"></p>
+<p><img src="http://mattkaar.github.com/images/mk/safari_reader.png" width="512" height="339"></p>
 
 <p>Now when will they give us the same thing on the iPad??</p>
 ]]></content>
@@ -152,10 +152,10 @@
   
   <entry>
     <title type="html"><![CDATA[Kindle, how low will you go?]]></title>
-    <link href="http://yoursite.com/blog/2010/07/01/kindle-how-low-will-you-go/"/>
+    <link href="http://mattkaar.github.com/blog/2010/07/01/kindle-how-low-will-you-go/"/>
     <updated>2010-07-01T08:17:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/07/01/kindle-how-low-will-you-go</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/mk/woot_kindle.png" width="359" height="168"></p>
+    <id>http://mattkaar.github.com/blog/2010/07/01/kindle-how-low-will-you-go</id>
+    <content type="html"><![CDATA[<p><img src="http://mattkaar.github.com/images/mk/woot_kindle.png" width="359" height="168"></p>
 
 <p>Oh Amazon, how you tempt me…</p>
 
@@ -169,10 +169,10 @@
   
   <entry>
     <title type="html"><![CDATA[iPhone 4: To upgrade or not, that's the question]]></title>
-    <link href="http://yoursite.com/blog/2010/06/15/iphone-4-to-upgrade-or-not/"/>
+    <link href="http://mattkaar.github.com/blog/2010/06/15/iphone-4-to-upgrade-or-not/"/>
     <updated>2010-06-15T00:35:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/06/15/iphone-4-to-upgrade-or-not</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/mk/iphone4.jpg" width="360" height="270"></p>
+    <id>http://mattkaar.github.com/blog/2010/06/15/iphone-4-to-upgrade-or-not</id>
+    <content type="html"><![CDATA[<p><img src="http://mattkaar.github.com/images/mk/iphone4.jpg" width="360" height="270"></p>
 
 <p>Being between jobs this week has me with free time, and my iPhone 3GS is burning a hole in my pocket right now.</p>
 
@@ -190,10 +190,10 @@
   
   <entry>
     <title type="html"><![CDATA[Switching gears after four great years]]></title>
-    <link href="http://yoursite.com/blog/2010/05/22/switching-gears-after-four-great-years/"/>
+    <link href="http://mattkaar.github.com/blog/2010/05/22/switching-gears-after-four-great-years/"/>
     <updated>2010-05-22T07:32:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/05/22/switching-gears-after-four-great-years</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/mk/mitre_to_cert.png" width="500" height="165"></p>
+    <id>http://mattkaar.github.com/blog/2010/05/22/switching-gears-after-four-great-years</id>
+    <content type="html"><![CDATA[<p><img src="http://mattkaar.github.com/images/mk/mitre_to_cert.png" width="500" height="165"></p>
 
 <p>I&#8217;m leaving my job at <a href="http://www.mitre.org">MITRE</a> for a new one at <a href="http://www.cert.org">CERT</a>.</p>
 
