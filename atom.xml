@@ -4,7 +4,7 @@
   <title><![CDATA[matt kaar]]></title>
   <link href="http://mattkaar.github.com/atom.xml" rel="self"/>
   <link href="http://mattkaar.github.com/"/>
-  <updated>2012-11-23T14:53:05-05:00</updated>
+  <updated>2012-11-24T07:42:43-05:00</updated>
   <id>http://mattkaar.github.com/</id>
   <author>
     <name><![CDATA[Matt]]></name>
@@ -23,6 +23,9 @@
 <p><img src="http://mattkaar.github.com/images/mk/craigslist_ottoman.png" width="448" height="355"></p>
 
 <p>With a search only returning six hits, what we really needed was Craigslist to notify us when new ottomans get posted. Craigslist won&#8217;t do this on its own, but with the help of <a href="http://feedmyinbox.com/">FeedMyInbox</a>, searching for our new ottoman became a whole lot easier.</p>
+
+<!-- more -->
+
 
 <p>There are just two steps to this trick:</p>
 
@@ -53,6 +56,9 @@
 
 <p>It turns out connecting with Windows is easy too. Here&#8217;s how I did it…</p>
 
+<!-- more -->
+
+
 <ol>
 <li>Download and install the <strong>OpenVPN GUI for Windows</strong> from <a href="http://openvpn.se/download.html">here</a> (the full Installation Package). Accept all the defaults when installing.</li>
 <li>Download the same keys and certificates used in the Mac setup (<strong>ca.crt</strong>, <strong>ta.key</strong>,<strong><em>yourname</em>.crt</strong> and <strong><em>yourname</em>.key</strong>) to your Windows machine. You might need a client like <a href="http://winscp.net/eng/download.php">WinSCP</a> to pull them off the EC2 server.</li>
@@ -77,6 +83,9 @@
 
 <p>To get started, head over to <a href="http://instapaper.com">instapaper.com</a> and register for an account. I recommend setting a password too, but it&#8217;s not required. Then click and drag the <strong>Read Later</strong> button to the bookmarks bar in your browser (that&#8217;s Chrome for Mac below.)</p>
 
+<!-- more -->
+
+
 <p><img src="http://mattkaar.github.com/images/mk/instapaper.png" width="462" height="442"></p>
 
 <p>And that&#8217;s it! When you stumble across a long web article, just click that Read Later bookmark. Once you have time to read, open up Instapaper and click the Text button next to each story — they&#8217;ll show up without any annoying ads.</p>
@@ -99,6 +108,9 @@
 <p>But no worries, Firefox is still a fine browser. And here&#8217;s my best attempt to walk you through installing something on your computer without logging in and doing it for you. :)</p>
 
 <p>Here we go…</p>
+
+<!-- more -->
+
 
 <ol>
 <li><p>Click here → <a href="https://addons.mozilla.org/en-US/firefox/addon/195787/">iReader :: Add-ons for Firefox</a>.  That will load a separate tab with this in it:</p>
@@ -139,6 +151,9 @@
 <p>Reader displays an article&#8217;s text in a readable font size and greys out the rest of the clutter.  It&#8217;ll also consolidate multi-page articles to a single page.</p>
 
 <p>For those not on Safari, the <a href="https://addons.mozilla.org/en-US/firefox/addon/195787/">iReader extension for Firefox</a> and <a href="https://chrome.google.com/extensions/detail/ppelffpjgkifjfgnbaaldcehkpajlmbc">Chrome</a> gives you the same clutter-free reading goodness.</p>
+
+<!-- more -->
+
 
 <p>Check out how Reader handles <a href="http://www.nytimes.com/2010/07/27/health/27brod.html">this New York Times article on Vitamin D deficiency</a>.</p>
 
