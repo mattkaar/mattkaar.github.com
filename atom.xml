@@ -4,7 +4,7 @@
   <title><![CDATA[matt kaar]]></title>
   <link href="http://mattkaar.github.com/atom.xml" rel="self"/>
   <link href="http://mattkaar.github.com/"/>
-  <updated>2012-12-02T00:35:01-05:00</updated>
+  <updated>2012-12-02T09:09:27-05:00</updated>
   <id>http://mattkaar.github.com/</id>
   <author>
     <name><![CDATA[Matt Kaar]]></name>
@@ -18,7 +18,7 @@
     <link href="http://mattkaar.github.com/blog/2012/12/01/raspberry-pi-as-a-baby-monitor/"/>
     <updated>2012-12-01T10:41:00-05:00</updated>
     <id>http://mattkaar.github.com/blog/2012/12/01/raspberry-pi-as-a-baby-monitor</id>
-    <content type="html"><![CDATA[<p>As we headed out of town for Thanksgiving, I was in search of my next tech project. On a whim I threw a Raspberry Pi and Yeti USB microphone in my bag, determined to create a networked, high-fidelity baby monitor.</p>
+    <content type="html"><![CDATA[<p>As we headed out of town for Thanksgiving, I was in search of my next tech project. On a whim I threw a <a href="http://www.raspberrypi.org">Raspberry Pi</a> and Yeti USB microphone in my bag, determined to create a networked, high-fidelity baby monitor.</p>
 
 <p>It turned out to be easier than I thought.</p>
 
