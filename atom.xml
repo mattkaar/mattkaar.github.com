@@ -4,7 +4,7 @@
   <title><![CDATA[matt kaar]]></title>
   <link href="http://mattkaar.github.com/atom.xml" rel="self"/>
   <link href="http://mattkaar.github.com/"/>
-  <updated>2012-11-24T07:56:27-05:00</updated>
+  <updated>2012-12-02T00:32:04-05:00</updated>
   <id>http://mattkaar.github.com/</id>
   <author>
     <name><![CDATA[Matt Kaar]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Raspberry Pi as a Baby Monitor]]></title>
+    <link href="http://mattkaar.github.com/blog/2012/12/01/raspberry-pi-as-a-baby-monitor/"/>
+    <updated>2012-12-01T10:41:00-05:00</updated>
+    <id>http://mattkaar.github.com/blog/2012/12/01/raspberry-pi-as-a-baby-monitor</id>
+    <content type="html"><![CDATA[<p>As we headed out of town for Thanksgiving, I was in search of my next tech project. On a whim I threw a Raspberry Pi and Yeti USB microphone in my bag, determined to create a networked, high-fidelity baby monitor.</p>
+
+<p>It turned out to be easier than I thought.</p>
+
+<p><img src="http://mattkaar.github.com/images/mk/raspberry_pi_monitor.jpg" width="315" height="315"></p>
+
+<!-- more -->
+
+
+<p>First, the Yeti worked without needing a powered USB hub… score. Then Raspbian picked it out without any issues.</p>
+
+<pre><code>$ arecord -l
+**** List of CAPTURE Hardware Devices ****
+card 1: Microphone [Yeti Stereo Microphone], device 0: USB Audio [USB Audio]
+  Subdevices: 1/1
+  Subdevice #0: subdevice #0
+</code></pre>
+
+<p>Finally, I stumbled across <a href="http://mutsuda.com/2012/09/07/raspberry-pi-into-an-audio-spying-device/">this excellent blog post</a> from <a href="https://twitter.com/mutsuda">@mutsuda</a> that shows how to use <code>aplay</code> and <code>arecord</code> to send captured audio to a remote system for playback. With these instructions, you&#8217;ll need another Raspberry Pi or separate Linux system for the listening side.</p>
+
+<div class='embed tweet'><blockquote class="twitter-tweet" data-in-reply-to="271615902557036547"><p>@<a href="https://twitter.com/mattkaar">mattkaar</a> Fab. I&#8217;ve always thought monitors are absurdly expensive - wicked to exploit new parents&#8217; worries for $$$. Will you write it up?</p>&mdash; Raspberry Pi (@Raspberry_Pi) <a href="https://twitter.com/Raspberry_Pi/status/271617154087002112" data-datetime="2012-11-22T14:12:30+00:00">November 22, 2012</a></blockquote>
+<script src="http://mattkaar.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+
+
+<p>Here we go. First, make sure the levels are correct for both input and output (mine were muted by default).</p>
+
+<pre><code>$ alsamixer
+</code></pre>
+
+<p>Then run this test capture on the Raspberry Pi.</p>
+
+<pre><code>$ arecord -D plughw:1,0 -f cd -d 10 test.wav
+</code></pre>
+
+<p>And then this should play the test file out of headphone jack on the RPi.</p>
+
+<pre><code>$ aplay test.wav
+</code></pre>
+
+<p>Finally, to send sound to a remote system, give this a shot.</p>
+
+<pre><code>$ arecord -D plughw:1,0 -f dat | ssh -C user@remoteip aplay -f dat
+</code></pre>
+
+<p>You should hear remote audio out of the far end provided those mixer settings are correct too.</p>
+
+<p>Enjoy your new Raspberry Pi baby monitor!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Craigslist searches delivered to your inbox]]></title>

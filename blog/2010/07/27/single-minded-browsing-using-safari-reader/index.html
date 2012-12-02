@@ -30,6 +30,18 @@
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 
   
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-768406-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
@@ -37,7 +49,7 @@
   <header role="banner"><hgroup>
   <h1><a href="/">matt kaar</a></h1>
   
-    <h2>thoughts on current tech</h2>
+    <h2>tech blogging on occasion</h2>
   
 </hgroup>
 
@@ -168,9 +180,50 @@
 
 <aside class="sidebar">
   
-    <section>
+    
+<section>
+  <h1>About Me</h1>
+  <div id="twitter-profile" style="margin-top:0.5em;">
+    <p>
+      <strong>Matt Kaar</strong> 
+      (<a href="http://twitter.com/mattkaar">@mattkaar</a>)
+    </p>
+    <p></p>
+  </div>
+  <script type="text/javascript">
+    $.domReady(function(){
+        var container = $('#twitter-profile'),
+            user = "mattkaar";
+
+        function parseTwLinks(s) {
+          var twUrl = "http://www.twitter.com/"
+          s = s.replace(/ (@([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+p2+"'>"+p1+"</a>"
+          }).replace(/ (#([\w]+))/g, function(match, p1, p2) {
+              return " <a href='"+twUrl+"#!/search?q=%23"+p2+"'>"+p1+"</a>"
+          })
+          return s
+        }
+
+        $.ajax({
+            url: "http://api.twitter.com/1/users/show.json?include_entities=false&screen_name="+user+"&callback=?"
+          , type: 'jsonp'
+          , error: function (err) { $('#twitter-profile').addClass('error');  }
+          , success: function(data) {
+              container.html('<img class="left" src="http://api.twitter.com/1/users/profile_image/'+user+'.json?size=bigger" alt="@'+user+'"><p><strong>'+data.name+'</strong> (<a href="http://twitter.com/'+user+'">@'+user+'</a>)<br/>'+data.location+'</p><p>'+parseTwLinks(data.description)+'</p>');
+            }
+        })
+      });
+  </script>
+</section>
+
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/12/01/raspberry-pi-as-a-baby-monitor/">Raspberry Pi as a Baby Monitor</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2011/03/15/craigslist-searches-delivered-to-your-inbox/">Craigslist searches delivered to your inbox</a>
@@ -186,10 +239,6 @@
     
       <li class="post">
         <a href="/blog/2010/08/09/how-to-install-ireader-for-firefox/">How to install iReader for Firefox</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2010/07/27/single-minded-browsing-using-safari-reader/">Single-minded browsing using Safari Reader</a>
       </li>
     
   </ul>
