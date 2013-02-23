@@ -12,6 +12,8 @@ Nat and I are on the hunt for a leather ottoman. Some guy on Craigslist sold his
 
 With a search only returning six hits, what we really needed was Craigslist to notify us when new ottomans get posted. Craigslist won't do this on its own, but with the help of [FeedMyInbox](http://feedmyinbox.com/), searching for our new ottoman became a whole lot easier.
 
+<!-- more -->
+
 There are just two steps to this trick:
 
 1. After searching for an item on Craigslist, **copy the URL from the results page**.

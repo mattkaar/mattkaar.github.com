@@ -16,6 +16,8 @@ Reader displays an article's text in a readable font size and greys out the rest
 
 For those not on Safari, the [iReader extension for Firefox](https://addons.mozilla.org/en-US/firefox/addon/195787/) and [Chrome](https://chrome.google.com/extensions/detail/ppelffpjgkifjfgnbaaldcehkpajlmbc) gives you the same clutter-free reading goodness.
 
+<!-- more -->
+
 Check out how Reader handles [this New York Times article on Vitamin D deficiency](http://www.nytimes.com/2010/07/27/health/27brod.html).
 
 {% img /images/mk/nytimes_article.png 552 406 %}

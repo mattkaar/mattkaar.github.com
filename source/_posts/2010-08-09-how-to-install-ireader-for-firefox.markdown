@@ -16,6 +16,8 @@ But no worries, Firefox is still a fine browser. And here's my best attempt to w
 
 Here we go…
 
+<!-- more -->
+
 1. Click here → [iReader :: Add-ons for Firefox](https://addons.mozilla.org/en-US/firefox/addon/195787/).  That will load a separate tab with this in it:
 
     {% img /images/mk/ireader_1.png %}

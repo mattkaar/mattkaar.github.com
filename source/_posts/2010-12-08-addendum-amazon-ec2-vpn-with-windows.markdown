@@ -12,6 +12,8 @@ categories:
 
 It turns out connecting with Windows is easy too. Here's how I did it…
 
+<!-- more -->
+
 1. Download and install the **OpenVPN GUI for Windows** from [here](http://openvpn.se/download.html) (the full Installation Package). Accept all the defaults when installing.
 2. Download the same keys and certificates used in the Mac setup (**ca.crt**, **ta.key**,***yourname*.crt** and ***yourname*.key**) to your Windows machine. You might need a client like [WinSCP](http://winscp.net/eng/download.php) to pull them off the EC2 server.
 3. Download the client template [here](http://www.stratumsecurity.com/sites/default/files/ec2.conf) and rename it to **EC2_VPN.ovpn**. Open it in WordPad and change the hostname and cert/key filenames (lines 42 and 89-90).

@@ -10,6 +10,8 @@ If there's one browsing tool I like more than [Safari Reader](/blog/2010/07/27/s
 
 To get started, head over to [instapaper.com](http://instapaper.com) and register for an account. I recommend setting a password too, but it's not required. Then click and drag the **Read Later** button to the bookmarks bar in your browser (that's Chrome for Mac below.)
 
+<!-- more -->
+
 {% img /images/mk/instapaper.png 462 442 %}
 
 And that's it! When you stumble across a long web article, just click that Read Later bookmark. Once you have time to read, open up Instapaper and click the Text button next to each story — they'll show up without any annoying ads.
