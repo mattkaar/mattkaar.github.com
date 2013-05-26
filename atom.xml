@@ -4,7 +4,7 @@
   <title><![CDATA[matt kaar]]></title>
   <link href="http://mattkaar.github.com/atom.xml" rel="self"/>
   <link href="http://mattkaar.github.com/"/>
-  <updated>2013-05-26T15:50:50-04:00</updated>
+  <updated>2013-05-26T15:54:19-04:00</updated>
   <id>http://mattkaar.github.com/</id>
   <author>
     <name><![CDATA[Matt Kaar]]></name>
@@ -235,11 +235,6 @@ Using POSIX real-time scheduling, priority 98
 <!-- more -->
 
 
-<p><strong>UPDATE 5-26-13:</strong> I&rsquo;ve now <a href="http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/">added web streaming to the setup</a>, so you don&rsquo;t need another Raspberry Pi or Linux system to receive audio.</p>
-
-<hr/>
-
-
 <p>First, the Yeti worked without needing a powered USB hub… score. Then Raspbian picked it out without any issues.</p>
 
 <pre><code>$ arecord -l
@@ -250,6 +245,8 @@ card 1: Microphone [Yeti Stereo Microphone], device 0: USB Audio [USB Audio]
 </code></pre>
 
 <p>Finally, I stumbled across <a href="http://mutsuda.com/2012/09/07/raspberry-pi-into-an-audio-spying-device/">this excellent blog post</a> from <a href="https://twitter.com/mutsuda">@mutsuda</a> that shows how to use <code>aplay</code> and <code>arecord</code> to send captured audio to a remote system for playback. With these instructions, you&rsquo;ll need another Raspberry Pi or separate Linux system for the listening side.</p>
+
+<p><strong>UPDATE 5-26-13:</strong> I&rsquo;ve now <a href="http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/">added web streaming to the setup</a>, so you don&rsquo;t need another Raspberry Pi or Linux system to receive audio.</p>
 
 <div class='embed tweet'><blockquote class="twitter-tweet" data-in-reply-to="271615902557036547"><p>@<a href="https://twitter.com/mattkaar">mattkaar</a> Fab. I&#8217;ve always thought monitors are absurdly expensive - wicked to exploit new parents&#8217; worries for $$$. Will you write it up?</p>&mdash; Raspberry Pi (@Raspberry_Pi) <a href="https://twitter.com/Raspberry_Pi/status/271617154087002112" data-datetime="2012-11-22T14:12:30+00:00">November 22, 2012</a></blockquote>
 <script src="http://mattkaar.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script></div>
