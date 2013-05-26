@@ -4,7 +4,7 @@
   <title><![CDATA[matt kaar]]></title>
   <link href="http://mattkaar.github.com/atom.xml" rel="self"/>
   <link href="http://mattkaar.github.com/"/>
-  <updated>2013-05-26T15:32:00-04:00</updated>
+  <updated>2013-05-26T15:50:50-04:00</updated>
   <id>http://mattkaar.github.com/</id>
   <author>
     <name><![CDATA[Matt Kaar]]></name>
@@ -20,7 +20,7 @@
     <id>http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor</id>
     <content type="html"><![CDATA[<p>My <a href="http://mattkaar.github.com/blog/2012/12/01/raspberry-pi-as-a-baby-monitor">Raspberry Pi baby monitor</a> writeup got some love from the <a href="http://www.raspberrypi.org/archives/2665">Raspberry Pi site</a> and <a href="http://www.cnn.com/2012/12/21/tech/innovation/raspberry-pi-computer-upton">CNN</a>.</p>
 
-<p>To kick things up a notch, I added web streaming audio to the mix. With the help of <a href="http://www.icecast.org/">icecast2</a> and <a href="http://darkice.org/">darkice</a>, the Raspberry Pi transcodes live audio to MP3 and broadcasts it over HTTP.</p>
+<p>To kick things up a notch, I just added web streaming audio to the mix. With the help of <a href="http://www.icecast.org/">icecast2</a> and <a href="http://darkice.org/">darkice</a>, the Raspberry Pi transcodes live audio to MP3 and broadcasts it over HTTP.</p>
 
 <p><img src="http://mattkaar.github.com/images/mk/icecast2.png" width="300" height="300"></p>
 
@@ -233,6 +233,11 @@ Using POSIX real-time scheduling, priority 98
 <p><img src="http://mattkaar.github.com/images/mk/raspberry_pi_monitor.jpg" width="315" height="315"></p>
 
 <!-- more -->
+
+
+<p><strong>UPDATE 5-26-13:</strong> I&rsquo;ve now <a href="http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/">added web streaming to the setup</a>, so you don&rsquo;t need another Raspberry Pi or Linux system to receive audio.</p>
+
+<hr/>
 
 
 <p>First, the Yeti worked without needing a powered USB hub… score. Then Raspbian picked it out without any issues.</p>
