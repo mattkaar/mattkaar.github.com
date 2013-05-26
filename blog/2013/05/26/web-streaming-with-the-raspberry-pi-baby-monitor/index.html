@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Web Streaming with the Raspberry Pi Baby Monitor - matt kaar</title>
+  <meta name="author" content="Matt Kaar">
+
+  
+  <meta name="description" content="My Raspberry Pi baby monitor writeup got some love from the Raspberry Pi site and CNN. To kick things up a notch, I added web streaming audio to the &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="matt kaar" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-768406-5']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">matt kaar</a></h1>
+  
+    <h2>tech blogging on occasion</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:mattkaar.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Web Streaming With the Raspberry Pi Baby Monitor</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T15:16:00-04:00" pubdate data-updated="true">May 26<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>My <a href="/blog/2012/12/01/raspberry-pi-as-a-baby-monitor">Raspberry Pi baby monitor</a> writeup got some love from the <a href="http://www.raspberrypi.org/archives/2665">Raspberry Pi site</a> and <a href="http://www.cnn.com/2012/12/21/tech/innovation/raspberry-pi-computer-upton">CNN</a>.</p>
+
+<p>To kick things up a notch, I added web streaming audio to the mix. With the help of <a href="http://www.icecast.org/">icecast2</a> and <a href="http://darkice.org/">darkice</a>, the Raspberry Pi transcodes live audio to MP3 and broadcasts it over HTTP.</p>
+
+<p><img src="/images/mk/icecast2.png" width="300" height="300"></p>
+
+<!-- more -->
+
+
+<p><a href="http://twitter.com/t3node">@t3node</a> wrote up an <a href="http://www.t3node.com/blog/live-streaming-mp3-audio-with-darkice-and-icecast2-on-raspberry-pi/">excellent guide on live mp3 streaming using the Raspberry Pi</a>. Using that post as a guide, here&rsquo;s what I did to get it working.</p>
+
+<h3>Download darkice source</h3>
+
+<p>First, add the Raspbian source repository if it isn&rsquo;t already loaded. Add this line to <code>/etc/apt/sources.list</code></p>
+
+<pre><code>deb-src http://mirrordirector.raspbian.org/raspbian/ wheezy main contrib non-free rpi
+</code></pre>
+
+<p>Update packages and install the darkice dependencies.</p>
+
+<pre><code>$ sudo apt-get update
+$ sudo apt-get --no-install-recommends install build-essential devscripts autotools-dev fakeroot dpkg-dev debhelper autotools-dev dh-make quilt ccache libsamplerate0-dev libpulse-dev libaudio-dev lame libjack-jackd2-dev libasound2-dev libtwolame-dev libfaad-dev libflac-dev libmp4v2-dev libshout3-dev libmp3lame-dev
+</code></pre>
+
+<p>Grab the source package for darkice.</p>
+
+<pre><code>$ mkdir src; cd src/
+$ apt-get source darkice
+</code></pre>
+
+<p>Modify the compilation options to match Raspbian.</p>
+
+<pre><code>$ cd darkice-1.0
+$ vi debian/rules
+</code></pre>
+
+<p><code>debian/rules</code> should look like this:</p>
+
+<figure class='code'><figcaption><span>debian/rules</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='makefile'><span class='line'><span class="c">#!/usr/bin/make -f</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">%</span><span class="o">:</span>
+</span><span class='line'>    dh <span class="nv">$@</span>
+</span><span class='line'>
+</span><span class='line'><span class="nf">.PHONY</span><span class="o">:</span> <span class="m">override_dh_auto_configure</span>
+</span><span class='line'><span class="nf">override_dh_auto_configure</span><span class="o">:</span>
+</span><span class='line'>    ln -s /usr/share/misc/config.guess .
+</span><span class='line'>    ln -s /usr/share/misc/config.sub .
+</span><span class='line'>    dh_auto_configure -- --prefix<span class="o">=</span>/usr --sysconfdir<span class="o">=</span>/usr/share/doc/darkice/examples --with-vorbis-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ --with-jack-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ --with-alsa-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ --with-faac-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ --with-aacplus-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ --with-samplerate-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ --with-lame-prefix<span class="o">=</span>/usr/lib/arm-linux-gnueabihf/ <span class="nv">CFLAGS</span><span class="o">=</span><span class="s1">&#39;-march=armv6 -mfpu=vfp -mfloat-abi=hard&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Beware, &lsquo;make&rsquo; wants tabs instead of spaces. To be on the safe side, you can download <a href="/misc/debian/rules">this rules file</a> instead.</p>
+
+<p>Before you build the new .deb package, change the version to reflect MP3 support:</p>
+
+<pre><code>$ debchange -v 1.0-999~mp3+1
+</code></pre>
+
+<p>Your editor will open to edit the changelog.</p>
+
+<figure class='code'><figcaption><span>debian/changelog.dch</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>
+</span><span class='line'>darkice (1.0-999~mp3+1) UNRELEASED; urgency=low
+</span><span class='line'>
+</span><span class='line'>  * New build with mp3 support
+</span><span class='line'>
+</span><span class='line'> --  &lt;pi@blueberrypi&gt;  Sun, 26 May 2013 04:22:38 -0400
+</span><span class='line'> </span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Build and install darkice</h3>
+
+<p>Now build and install your custom darkice package.</p>
+
+<pre><code>$ dpkg-buildpackage -rfakeroot -uc -b
+$ sudo dpkg -i ../darkice_1.0-999~mp3+1_armhf.deb
+</code></pre>
+
+<p>Darkice is now installed. To configure it, copy the template config file to <code>/etc</code>.</p>
+
+<pre><code>$ sudo cp /usr/share/doc/darkice/examples/darkice.cfg /etc/
+</code></pre>
+
+<p>Here&rsquo;s my sample config file:</p>
+
+<figure class='code'><figcaption><span>/etc/darkice.cfg</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='cfg'><span class='line'><span class="c1"># see the darkice.cfg man page for details</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># this section describes general aspects of the live streaming session</span>
+</span><span class='line'><span class="k">[general]</span>
+</span><span class='line'><span class="na">duration</span>      <span class="o">=</span> <span class="s">0                # duration of encoding, in seconds. 0 means forever</span>
+</span><span class='line'><span class="na">bufferSecs</span>    <span class="o">=</span> <span class="s">5                # size of internal slip buffer, in seconds</span>
+</span><span class='line'><span class="na">reconnect</span>     <span class="o">=</span> <span class="s">yes              # reconnect to the server(s) if disconnected</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># this section describes the audio input that will be streamed</span>
+</span><span class='line'><span class="k">[input]</span>
+</span><span class='line'><span class="na">device</span>        <span class="o">=</span> <span class="s">plughw:1,0       # Alsa soundcard device for the audio input</span>
+</span><span class='line'><span class="na">sampleRate</span>    <span class="o">=</span> <span class="s">44100            # sample rate in Hz. try 11025, 22050 or 44100</span>
+</span><span class='line'><span class="na">bitsPerSample</span> <span class="o">=</span> <span class="s">16               # bits per sample. try 16</span>
+</span><span class='line'><span class="na">channel</span>       <span class="o">=</span> <span class="s">1                # channels. 1 = mono, 2 = stereo</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># this section describes a streaming connection to an IceCast2 server</span>
+</span><span class='line'><span class="c1"># there may be up to 8 of these sections, named [icecast2-0] ... [icecast2-7]</span>
+</span><span class='line'><span class="c1"># these can be mixed with [icecast-x] and [shoutcast-x] sections</span>
+</span><span class='line'><span class="k">[icecast2-0]</span>
+</span><span class='line'><span class="na">bitrateMode</span>   <span class="o">=</span> <span class="s">vbr              # variable bit rate</span>
+</span><span class='line'><span class="na">format</span>        <span class="o">=</span> <span class="s">mp3              # format of the stream: mp3</span>
+</span><span class='line'><span class="na">quality</span>       <span class="o">=</span> <span class="s">1.0              # quality of the stream sent to the server</span>
+</span><span class='line'><span class="na">bitrate</span>       <span class="o">=</span> <span class="s">256</span>
+</span><span class='line'><span class="na">server</span>        <span class="o">=</span> <span class="s">localhost        # host name of the server</span>
+</span><span class='line'><span class="na">port</span>          <span class="o">=</span> <span class="s">8000             # port of the IceCast2 server, usually 8000</span>
+</span><span class='line'><span class="na">password</span>      <span class="o">=</span> <span class="s">*SOURCE_PASS*    # source password to the IceCast2 server</span>
+</span><span class='line'><span class="na">mountPoint</span>    <span class="o">=</span> <span class="s">raspi            # mount point of this stream on the IceCast2 server</span>
+</span><span class='line'><span class="na">name</span>          <span class="o">=</span> <span class="s">RasPi            # name of the stream</span>
+</span><span class='line'><span class="na">description</span>   <span class="o">=</span> <span class="s">DarkIce on RasPi # description of the stream</span>
+</span><span class='line'><span class="na">url</span>           <span class="o">=</span> <span class="s">http://localhost # URL related to the stream</span>
+</span><span class='line'><span class="na">genre</span>         <span class="o">=</span> <span class="s">Baby             # genre of the stream</span>
+</span><span class='line'><span class="na">public</span>        <span class="o">=</span> <span class="s">no               # advertise this stream?</span>
+</span><span class='line'><span class="na">localDumpFile</span> <span class="o">=</span> <span class="s">recording.mp3    # Record also to a file</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Install icecast2 and begin monitoring</h3>
+
+<p>Now you&rsquo;ll need to install icecast2 to stream the audio over the network.</p>
+
+<pre><code>$ sudo apt-get install icecast2
+</code></pre>
+
+<p>The installer will ask you for a few passwords, make sure you set the source password as the same one for darkice (<code>*SOURCE_PASS*</code> in the sample config above).</p>
+
+<p>Now start icecast2 and darkice.</p>
+
+<pre><code>$ sudo service icecast2 start
+$ sudo darkice
+DarkIce 1.0 live audio streamer, http://code.google.com/p/darkice/
+Copyright (c) 2000-2007, Tyrell Hungary, http://tyrell.hu/
+Copyright (c) 2008-2010, Akos Maroy and Rafael Diniz
+This is free software, and you are welcome to redistribute it
+under the terms of The GNU General Public License version 3 or
+any later version.
+
+Using config file: /etc/darkice.cfg
+Using ALSA DSP input device: plughw:1,0
+Using POSIX real-time scheduling, priority 98
+</code></pre>
+
+<p>Darkice will run in the foreground (CTRL+C to exit).</p>
+
+<p>Now open up a browser and navigate to <a href="http://">http://</a>{Raspberry Pi IP}:8000. Click on <strong>m3u</strong> and your audio player should play the baby monitor audio. It even works on the iPhone.</p>
+
+<p>The one downside is that there&rsquo;s a 5-10 second delay when using this method. But since I&rsquo;m just interested in a baby monitor, 5-10 seconds doesn&rsquo;t matter that much. Also, take care to add some authentication and secure passwords before you try this over the Internet.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Matt Kaar</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-26T15:16:00-04:00" pubdate data-updated="true">May 26<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/12/01/raspberry-pi-as-a-baby-monitor/" title="Previous Post: Raspberry Pi as a Baby Monitor">&laquo; Raspberry Pi as a Baby Monitor</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Me</h1>
+  <div id="twitter-profile" style="margin-top:0.5em;">
+    <p><img class="left" src="/images/mk/matt.jpg" height="100" width="100"><strong>Matt Kaar</strong><br>Reston, Virginia</p>
+    <p>Cybersecurity guy. Photographer, runner, college football fan, wannabe web developer.</p>
+    <a href="https://twitter.com/mattkaar" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @mattkaar</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </div>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/">Web Streaming With the Raspberry Pi Baby Monitor</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/01/raspberry-pi-as-a-baby-monitor/">Raspberry Pi as a Baby Monitor</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/15/craigslist-searches-delivered-to-your-inbox/">Craigslist Searches Delivered to Your Inbox</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/12/08/addendum-amazon-ec2-vpn-with-windows/">Addendum: Amazon EC2 VPN With Windows</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2010/08/29/hooked-on-instapaper/">Hooked on Instapaper</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Matt Kaar -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'mattkaar';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/';
+        var disqus_url = 'http://mattkaar.github.com/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
