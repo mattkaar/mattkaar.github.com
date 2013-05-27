@@ -8,7 +8,7 @@ categories:
 
 My [Raspberry Pi baby monitor](/blog/2012/12/01/raspberry-pi-as-a-baby-monitor) writeup got some love from the [Raspberry Pi site](http://www.raspberrypi.org/archives/2665) and [CNN](http://www.cnn.com/2012/12/21/tech/innovation/raspberry-pi-computer-upton).
 
-To kick things up a notch, I added web streaming audio to the mix. With the help of [icecast2](http://www.icecast.org/) and [darkice](http://darkice.org/), the Raspberry Pi transcodes live audio to MP3 and broadcasts it over HTTP.
+To kick things up a notch, I just added web streaming audio to the mix. With the help of [icecast2](http://www.icecast.org/) and [darkice](http://darkice.org/), the Raspberry Pi transcodes live audio to MP3 and broadcasts it over HTTP.
 
 {% img /images/mk/icecast2.png 300 300 %}
 

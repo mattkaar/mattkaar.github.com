@@ -24,6 +24,8 @@ First, the Yeti worked without needing a powered USB hub… score. Then Raspbian
 
 Finally, I stumbled across [this excellent blog post](http://mutsuda.com/2012/09/07/raspberry-pi-into-an-audio-spying-device/) from [@mutsuda](https://twitter.com/mutsuda) that shows how to use `aplay` and `arecord` to send captured audio to a remote system for playback. With these instructions, you'll need another Raspberry Pi or separate Linux system for the listening side.
 
+**UPDATE 5-26-13:** I've now [added web streaming to the setup](/blog/2013/05/26/web-streaming-with-the-raspberry-pi-baby-monitor/), so you don't need another Raspberry Pi or Linux system to receive audio.
+
 {% tweet https://twitter.com/Raspberry_Pi/status/271617154087002112 %}
 
 Here we go. First, make sure the levels are correct for both input and output (mine were muted by default).
