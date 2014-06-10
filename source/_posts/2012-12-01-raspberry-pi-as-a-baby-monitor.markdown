@@ -6,6 +6,10 @@ comments: true
 categories: 
 ---
 
+**UPDATE (6-9-2014):** Bernd Thul was kind enough to [translate these instructions into German](http://rasperryproject.blogspot.de/2014/06/babyphone-genutzte-hardware-raspberry.html).
+
+---
+<br/>
 As we headed out of town for Thanksgiving, I was in search of my next tech project. On a whim I threw a [Raspberry Pi](http://www.raspberrypi.org) and Yeti USB microphone in my bag, determined to create a networked, high-fidelity baby monitor.
 
 It turned out to be easier than I thought.
